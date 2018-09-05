@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <context-param>
+        <param-name>javax.faces.PROJECT_STAGE</param-name>
+        <param-value>Development</param-value>
+    </context-param>
+
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+
+    <welcome-file-list>
+        <!-- <welcome-file>index.xhtml</welcome-file> -->
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+	
+    <!-- Additional extension for JSP pages, use more than 1 to set multi pattern -->
+    <jsp-config>
+    	<jsp-property-group>
+        	<url-pattern>*.htm</url-pattern>
+        	<url-pattern>*.abc</url-pattern>
+    	</jsp-property-group>
+    </jsp-config>
+    
+    
+    <servlet>
+    	<servlet-name>InitParams</servlet-name>
+    	<jsp-file>/initParams/initParams.jsp</jsp-file>
+    	<init-param>
+    		<param-name>defaultName</param-name>
+    		<param-value>Guest</param-value>
+    	</init-param>
+    </servlet>
+	<servlet-mapping>
+		<servlet-name>InitParams</servlet-name>
+		<url-pattern>/initParams/initParams.jsp</url-pattern>
+	</servlet-mapping>    
+    
+    <context-param>
+  		<param-name>defaultName</param-name>
+  		<param-value>Guest From web.xml's context-param</param-value>
+	</context-param>
+    <context-param>
+  		<param-name>abc</param-name>
+  		<param-value>ABC</param-value>
+	</context-param>
+    
+    
+    <error-page>
+        <exception-type>javax.faces.application.ViewExpiredException</exception-type>
+        <location>/index.xhtml</location>
+    </error-page>
+    
+    
+</web-app>

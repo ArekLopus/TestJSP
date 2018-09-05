@@ -1,0 +1,17 @@
+<jsp:directive.page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" />
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <h1>Document.htm - XML syntax - A JSP document is a JSP page written using XML syntax.</h1>
+        <% out.println("This is just output from JSP scriptlet"); %>
+        <br/>
+        <jsp:scriptlet>
+        	out.println("This is just output from jsp:scriptlet tag");
+        </jsp:scriptlet>
+    </body>
+</html>
